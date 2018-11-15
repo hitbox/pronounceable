@@ -39,7 +39,6 @@ def pronounceable(length, digraph_chance=.5, diphthong_chance=.5):
 
     return word
 
-
 def main(argv=None):
     """
     Generate pronounceable words.
