@@ -45,6 +45,8 @@ def main(argv=None):
     Generate pronounceable words.
     """
     parser = argparse.ArgumentParser(description=main.__doc__)
+    parser.add_argument('-n', type=int, default=1,
+                        help='Number of words to generate. Default %(default)s')
     parser.add_argument('--length', type=int, default=5, help='Length of word. Default %(default)s')
     parser.add_argument('--digraph-chance', type=float, default=.5,
                         help='Chance to expand consonant into a random'
@@ -53,7 +55,9 @@ def main(argv=None):
                         help='Chance to expand diphthong into a random'
                              ' diphthong. Default: %(default)s')
     args = parser.parse_args()
-    print(pronounceable(args.length, args.digraph_chance, args.diphthong_chance))
+
+    for _ in range(args.n):
+        print(pronounceable(args.length, args.digraph_chance, args.diphthong_chance))
 
 if __name__ == '__main__':
     main()
