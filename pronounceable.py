@@ -13,9 +13,9 @@ digraphs = ['bl', 'br', 'ch', 'cl', 'cr', 'dr', 'fl', 'fr', 'gl', 'gr', 'pl',
             'squ', 'str', 'thr']
 diphthongs = ['au', 'aw', 'ay', 'ea', 'ei', 'ew', 'oi', 'oo', 'ou', 'ow', 'oy']
 
-_speedup = {char: tuple(part for part in digraphs + diphthongs if part.startswith(char))
-           for char in vowels + consonants
-           if any(map(char.startswith, digraphs + diphthongs))}
+_speedup = { char: tuple(part for part in digraphs + diphthongs if part.startswith(char))
+             for char in vowels + consonants
+             if any(map(char.startswith, digraphs + diphthongs)) }
 
 def pronounceable(length, digraph_chance=.5, diphthong_chance=.5):
     """
