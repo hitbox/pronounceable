@@ -53,7 +53,7 @@ def main(argv=None):
     parser.add_argument('--diphthong-chance', type=float, default=.5,
                         help='Chance to expand diphthong into a random'
                              ' diphthong. Default: %(default)s')
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     for _ in range(args.n):
         print(pronounceable(args.length, args.digraph_chance, args.diphthong_chance))
